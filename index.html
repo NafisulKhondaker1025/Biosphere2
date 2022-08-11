@@ -37,7 +37,7 @@
       <a-assets>
         <a-asset-item id="leoOnly" src="./assets/LEOOnly.glb"></a-asset-item>
         <a-asset-item id="full" src="./assets/BioSphereFinalV1.glb"></a-asset-item>
-        <a-asset-item id="witoutGlass" src="./assets/WithoutGlass.glb"></a-asset-item>
+        <a-asset-item id="withoutGlass" src="./assets/WithoutGlass.glb"></a-asset-item>
       </a-assets>
 
       <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
@@ -74,6 +74,7 @@
         gltf-model="#leoOnly"
         class="cantap"
         scale="3 3 3"
+        visible="false"
         xrextras-hold-drag
         xrextras-two-finger-rotate
         xrextras-pinch-scale
@@ -86,6 +87,7 @@
         gltf-model="#withoutGlass"
         class="cantap"
         scale="3 3 3"
+        visible="false"
         xrextras-hold-drag
         xrextras-two-finger-rotate
         xrextras-pinch-scale
