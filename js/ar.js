@@ -113,6 +113,8 @@ AFRAME.registerComponent('next-button', {
       const leoOnly = document.getElementById('leoOnly_m')
       const withoutGlass = document.getElementById('withoutGlass_m')
 
+      const nextButton = document.getElementById('nextbutton')
+
       nextButton.style.display = 'block'
       const nextView = () => {
         if (full.getAttribute('visible') == true) {
