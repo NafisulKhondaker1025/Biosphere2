@@ -119,12 +119,12 @@ AFRAME.registerComponent('next-button', {
         if (full.getAttribute('visible') == true) {
             full.setAttribute('visible', 'false')
             leoOnly.setAttribute('visible', 'true')
-            nextButton.innerHTML = 'Show LEO Only'
+            nextButton.innerHTML = 'Show Entire Biosphere 2'
         }
         else {
             full.setAttribute('visible', 'true')
             leoOnly.setAttribute('visible', 'false')
-            nextButton.innerHTML = 'Show Entire Biosphere 2'
+            nextButton.innerHTML = 'Show LEO Only'
         }
       }
       nextButton.onclick = nextView 
