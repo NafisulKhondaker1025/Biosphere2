@@ -111,7 +111,6 @@ AFRAME.registerComponent('next-button', {
     init() {
       const full = document.getElementById('full_m')
       const leoOnly = document.getElementById('leoOnly_m')
-      const withoutGlass = document.getElementById('withoutGlass_m')
 
       const nextButton = document.getElementById('nextbutton')
 
@@ -119,23 +118,15 @@ AFRAME.registerComponent('next-button', {
       const nextView = () => {
         if (full.getAttribute('visible') == true) {
             full.setAttribute('visible', 'false')
-            withoutGlass.setAttribute('visible', 'true')
-            leoOnly.setAttribute('visible', 'false')
-            nextButton.innerHTML = 'Show LEO Only'
-        }
-        else if (withoutGlass.getAttribute('visible') == true) {
-            full.setAttribute('visible', 'false')
-            withoutGlass.setAttribute('visible', 'false')
             leoOnly.setAttribute('visible', 'true')
-            nextButton.innerHTML = 'Show entire Biosphere 2'
+            nextButton.innerHTML = 'Show LEO Only'
         }
         else {
             full.setAttribute('visible', 'true')
-            withoutGlass.setAttribute('visible', 'false')
             leoOnly.setAttribute('visible', 'false')
-            nextButton.innerHTML = 'See Through Glass'
+            nextButton.innerHTML = 'Show Entire Biosphere 2'
         }
       }
-      nextButton.onclick = nextView  // Switch to the next animation when the button is pressed.
+      nextButton.onclick = nextView 
     },
 })
