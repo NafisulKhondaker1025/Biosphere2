@@ -27,7 +27,14 @@
 
       <!-- We can define assets here to be loaded when A-Frame initializes -->
       <a-assets>
-        <a-asset-item id="biosphereModel" src="./assets/BioSphereFinalV1.glb"></a-asset-item>
+        <a-asset-item id="floor" src="./assets/Floor.glb"></a-asset-item>
+        <a-asset-item id="glass" src="./assets/Glass.glb"></a-asset-item>
+        <a-asset-item id="leo" src="./assets/LEO.glb"></a-asset-item>
+        <a-asset-item id="leoFloor" src="./assets/LEOFloor.glb"></a-asset-item>
+        <a-asset-item id="lowerSupport" src="./assets/LowerSupport.glb"></a-asset-item>
+        <a-asset-item id="middleSupport" src="./assets/MiddleSupport.glb"></a-asset-item>
+        <a-asset-item id="sides" src="./assets/Sides.glb"></a-asset-item>
+        <a-asset-item id="structure" src="./assets/Structure.glb"></a-asset-item>
       </a-assets>
 
       <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
@@ -40,113 +47,116 @@
           rayOrigin: mouse;">
       </a-camera>
 
-      <!-- <a-entity
-          light="type: directional;
-             intensity: 0.8;
-             castShadow: true;
-             shadowMapHeight:2048;
-             shadowMapWidth:2048;
-             shadowCameraTop: 10;
-             target: #model;"
-          position="1 4.3 2.5"
-          xrextras-attach="target: model; offset: 1 15 3;"
-          shadow>
-      </a-entity> -->
+      <a-entity xr-light
+                  light="
+                  type: directional;
+                  castShadow: true;
+                  shadowMapHeight:2048;
+                  shadowMapWidth:2048;
+                  shadowCameraTop: 20;
+                  shadowCameraBottom: -20;
+                  shadowCameraRight: 20;
+                  shadowCameraLeft: -20;
+                  target: #camera"
+                  xrextras-attach="target: camera; offset: 8 15 4"
+                  position="1 4.3 2.5">
+        </a-entity>
 
-      <a-light type="ambient" intensity="0.5"></a-light>
+      <a-light xr-light="max: 0.5"
+                type="ambient">
+      </a-light>
       
+      <a-entity
+        id="floor_m"
+        gltf-model="#floor"
+        class="cantap"
+        scale="3 3 3"
+        xrextras-hold-drag
+        xrextras-two-finger-rotate
+        xrextras-pinch-scale
+        shadow>
+      </a-entity>
+
+      <a-entity
+        id="glass_m"
+        gltf-model="#glass"
+        class="cantap"
+        scale="3 3 3"
+        xrextras-hold-drag
+        xrextras-two-finger-rotate
+        xrextras-pinch-scale
+        shadow>
+      </a-entity>
+
+      <a-entity
+        id="leo_m"
+        gltf-model="#leo"
+        class="cantap"
+        scale="3 3 3"
+        xrextras-hold-drag
+        xrextras-two-finger-rotate
+        xrextras-pinch-scale
+        shadow>
+      </a-entity>
+
+      <a-entity
+        id="leoFloor_m"
+        gltf-model="#leoFloor"
+        class="cantap"
+        scale="3 3 3"
+        xrextras-hold-drag
+        xrextras-two-finger-rotate
+        xrextras-pinch-scale
+        shadow>
+      </a-entity>
+
+      <a-entity
+        id="lowerSupport_m"
+        gltf-model="#lowerSupport"
+        class="cantap"
+        scale="3 3 3"
+        xrextras-hold-drag
+        xrextras-two-finger-rotate
+        xrextras-pinch-scale
+        shadow>
+      </a-entity>
+
+      <a-entity
+        id="middleSupport_m"
+        gltf-model="#middleSupport"
+        class="cantap"
+        scale="3 3 3"
+        xrextras-hold-drag
+        xrextras-two-finger-rotate
+        xrextras-pinch-scale
+        shadow>
+      </a-entity>
+
+      <a-entity
+        id="sides_m"
+        gltf-model="#sides"
+        class="cantap"
+        scale="3 3 3"
+        xrextras-hold-drag
+        xrextras-two-finger-rotate
+        xrextras-pinch-scale
+        shadow>
+      </a-entity>
+
+      <a-entity
+        id="structure_m"
+        gltf-model="#structure"
+        class="cantap"
+        scale="3 3 3"
+        xrextras-hold-drag
+        xrextras-two-finger-rotate
+        xrextras-pinch-scale
+        shadow>
+      </a-entity>
+
       <a-entity
         id="structure"
         gltf-model="#biosphereModel"
-        class="cantap"
-        scale="3 3 3"
-        xrextras-hold-drag
-        xrextras-two-finger-rotate
-        xrextras-pinch-scale
-        shadow>
-      </a-entity>
-
-      <a-entity
-        id="structure"
-        model-object="from:#biosphereModel; obj:Structure"
-        class="cantap"
-        scale="3 3 3"
-        xrextras-hold-drag
-        xrextras-two-finger-rotate
-        xrextras-pinch-scale
-        shadow>
-      </a-entity>
-
-      <a-entity
-        id="leo"
-        model-object="from:#biosphereModel; obj:LEO"
-        class="cantap"
-        scale="3 3 3"
-        xrextras-hold-drag
-        xrextras-two-finger-rotate
-        xrextras-pinch-scale
-        shadow>
-      </a-entity>
-
-      <a-entity
-        id="leoFloor"
-        model-object="from:#biosphereModel; obj:LEO Floor"
-        class="cantap"
-        scale="3 3 3"
-        xrextras-hold-drag
-        xrextras-two-finger-rotate
-        xrextras-pinch-scale
-        shadow>
-      </a-entity>
-
-      <a-entity
-        id="lowerSupport"
-        model-object="from:#biosphereModel; obj:Lower Support"
-        class="cantap"
-        scale="3 3 3"
-        xrextras-hold-drag
-        xrextras-two-finger-rotate
-        xrextras-pinch-scale
-        shadow>
-      </a-entity>
-
-      <a-entity
-        id="middleSupport"
-        model-object="from:#biosphereModel; obj:Middle Support"
-        class="cantap"
-        scale="3 3 3"
-        xrextras-hold-drag
-        xrextras-two-finger-rotate
-        xrextras-pinch-scale
-        shadow>
-      </a-entity>
-
-      <a-entity
-        id="sides"
-        model-object="from:#biosphereModel; obj:Sides"
-        class="cantap"
-        scale="3 3 3"
-        xrextras-hold-drag
-        xrextras-two-finger-rotate
-        xrextras-pinch-scale
-        shadow>
-      </a-entity>
-
-      <a-entity
-        id="glass"
-        model-object="from:#biosphereModel; obj:glass"
-        class="cantap"
-        scale="3 3 3"
-        xrextras-hold-drag
-        xrextras-two-finger-rotate
-        xrextras-pinch-scale
-        visible="false"
-        shadow>
-      </a-entity>
-
-      <a-entity
-        id="floor"
-        model-object="from:#biosphereModel; obj:Floor"
         class="cantap"
         scale="3 3 3"
         xrextras-hold-drag
